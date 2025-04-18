@@ -1,0 +1,100 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap');
+
+body {
+    font-family: 'Orbitron', sans-serif;
+    background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+    color: white;
+    margin: 0;
+    padding: 20px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    scroll-behavior: smooth;
+}
+
+@keyframes gradientBG {
+    0% {background-position: 0% 50%;}
+    50% {background-position: 100% 50%;}
+    100% {background-position: 0% 50%;}
+}
+
+h1, h2, p {
+    text-align: center;
+    text-shadow: 0 0 8px #00ffe0;
+}
+h1 {
+    font-size: 7vw;
+    color: #00ffe0;
+}
+h2 {
+    font-size: 5vw;
+    color: #00bfff;
+    margin-top: 10px;
+}
+p#last-updated {
+    font-size: 3.5vw;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+#heatmap {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 600px;
+    gap: 20px;
+}
+
+.heatmap-row {
+    background: rgba(0, 128, 255, 0.2);
+    border: 2px solid rgba(0, 128, 255, 0.5);
+    border-radius: 12px;
+    padding: 20px;
+    font-size: 5vw;
+    text-align: left;
+    color: #ffffff;
+    position: relative;
+    overflow: visible;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+}
+
+.current-hour {
+    background: rgba(0, 255, 128, 0.4);
+    border: 2px solid #00ffe0;
+    box-shadow: 0 0 20px #00ffe0, 0 0 30px #00ffe0;
+    opacity: 1;
+}
+
+.blur {
+    filter: blur(2px);
+    opacity: 0.3;
+}
+
+.tooltip-floating {
+    background: rgba(0, 0, 0, 0.8);
+    border: 1px solid #00ffe0;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-size: 3.5vw;
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    white-space: nowrap;
+    opacity: 0.9;
+}
+
+@media (min-width: 600px) {
+    h1 { font-size: 36px; }
+    h2 { font-size: 24px; }
+    p#last-updated { font-size: 16px; }
+    .heatmap-row { font-size: 18px; padding: 20px; }
+    .tooltip-floating { font-size: 16px; }
+}
