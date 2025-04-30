@@ -1,17 +1,20 @@
+import Head from 'next/head'
+import HeatmapTable from '@/components/HeatmapTable'
+import heatmapData from '@/data/heatmap.json'
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crypto Trading Heatmap</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-    <h1>Crypto Trading Heatmap</h1>
-    <h2>24H Market Pulse</h2>
-    <p id="last-updated"></p>
-    <div id="heatmap"></div>
-    <script src="js/script.js"></script>
-</body>
-</html>
+export default function Home() {
+  return (
+    <>
+      <Head>
+        <title>Crypto Heatmap</title>
+        <meta name="description" content="Live crypto heatmap and stats by Crypto Goatz" />
+      </Head>
+
+      <main className="min-h-screen bg-base text-textPrimary p-6">
+        <h1 className="text-3xl font-bold mb-6 text-accent">Crypto Heatmap Table</h1>
+        <HeatmapTable tokens={heatmapData} />
+      </main>
+    </>
+  )
+}
+
