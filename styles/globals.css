@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "@fontsource/inter/variable.css";
+
+body {
+  @apply bg-base text-textPrimary font-sans;
+}
+
+a {
+  @apply text-accent hover:underline;
+}
